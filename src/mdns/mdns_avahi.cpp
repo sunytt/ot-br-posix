@@ -997,12 +997,16 @@ void PublisherAvahi::ServiceSubscription::Browse(void)
 
 void PublisherAvahi::ServiceSubscription::Release(void)
 {
-    for (auto &resolvers : mServiceResolvers)
-    {
-        RemoveServiceResolver(resolvers.first);
-    }
+    std::vector<std::string> instanceNames;
 
-    mServiceResolvers.clear();
+    for (const auto &resolvers : mServiceResolvers)
+    {
+        instanceNames.push_back(resolvers.first);
+    }
+    for (const auto &name : instanceNames)
+    {
+        RemoveServiceResolver(name);
+    }
 
     if (mServiceBrowser != nullptr)
     {
