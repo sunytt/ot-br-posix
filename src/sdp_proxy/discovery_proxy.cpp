@@ -215,6 +215,7 @@ void DiscoveryProxy::OnServiceDiscovered(const std::string                      
         if (DnsLabelsEqual(serviceName, aType) &&
             (instanceName.empty() || DnsLabelsEqual(instanceName, unescapedInstanceName)))
         {
+            otbrLogInfo("DiscoveryProxy::OnServiceDiscovered 1, aType = %s", aType.c_str());
             std::string serviceFullName    = aType + "." + domain;
             std::string translatedHostName = TranslateDomain(aInstanceInfo.mHostName, domain);
             std::string instanceFullName   = unescapedInstanceName + "." + serviceFullName;
@@ -224,6 +225,7 @@ void DiscoveryProxy::OnServiceDiscovered(const std::string                      
 
             otDnssdQueryHandleDiscoveredServiceInstance(mNcp.GetInstance(), serviceFullName.c_str(), &instanceInfo);
         }
+        otbrLogInfo("DiscoveryProxy::OnServiceDiscovered 2, aType = %s", aType.c_str());
     }
 }
 

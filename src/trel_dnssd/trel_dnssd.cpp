@@ -210,8 +210,14 @@ exit:
 void TrelDnssd::OnTrelServiceInstanceResolved(const std::string                             &aType,
                                               const Mdns::Publisher::DiscoveredInstanceInfo &aInstanceInfo)
 {
+    otbrLogInfo("Entered OnTrelServiceInstanceResolved, aType= %s", aType.c_str());
+
     VerifyOrExit(StringUtils::EqualCaseInsensitive(aType, kTrelServiceName));
+
+    otbrLogInfo("OnTrelServiceInstanceResolved 2 ");
     VerifyOrExit(aInstanceInfo.mNetifIndex == mTrelNetifIndex);
+
+    otbrLogInfo("OnTrelServiceInstanceResolved 3 ");
 
     if (aInstanceInfo.mRemoved)
     {
@@ -221,7 +227,7 @@ void TrelDnssd::OnTrelServiceInstanceResolved(const std::string                 
     {
         OnTrelServiceInstanceAdded(aInstanceInfo);
     }
-
+    otbrLogInfo("OnTrelServiceInstanceResolved 4 ");
 exit:
     return;
 }

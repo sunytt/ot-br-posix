@@ -907,6 +907,13 @@ void PublisherAvahi::UnsubscribeService(const std::string &aType, const std::str
 
     otbrLogInfo("Unsubscribe service %s.%s (left %zu)", aInstanceName.c_str(), aType.c_str(),
                 mSubscribedServices.size());
+    if (mSubscribedServices.size() > 0)
+    {
+        for (auto &ss : mSubscribedServices)
+        {
+            otbrLogInfo("left subscribed service: type= %s, name= %s", ss->mType.c_str(), ss->mInstanceName.c_str());
+        }
+    }
 
 exit:
     return;
@@ -1071,11 +1078,11 @@ void PublisherAvahi::ServiceSubscription::Resolve(uint32_t           aInterfaceI
                                                   const std::string &aInstanceName,
                                                   const std::string &aType)
 {
+    otbrLogInfo("Resolve service %s.%s inf %" PRIu32, aInstanceName.c_str(), aType.c_str(), aInterfaceIndex);
+
     auto serviceResolver = MakeUnique<ServiceResolver>();
 
     mPublisherAvahi->mServiceInstanceResolutionBeginTime[std::make_pair(aInstanceName, aType)] = Clock::now();
-
-    otbrLogInfo("Resolve service %s.%s inf %" PRIu32, aInstanceName.c_str(), aType.c_str(), aInterfaceIndex);
 
     serviceResolver->mType            = aType;
     serviceResolver->mPublisherAvahi  = this->mPublisherAvahi;

@@ -175,7 +175,7 @@ uint64_t Publisher::AddSubscriptionCallbacks(Publisher::DiscoveredServiceInstanc
     return subscriberId;
 }
 
-void Publisher::OnServiceResolved(const std::string &aType, const DiscoveredInstanceInfo &aInstanceInfo)
+void Publisher::OnServiceResolved(const std::string aType, const DiscoveredInstanceInfo &aInstanceInfo)
 {
     std::vector<uint64_t> subscriberIds;
 
@@ -197,6 +197,7 @@ void Publisher::OnServiceResolved(const std::string &aType, const DiscoveredInst
 
     // In a callback, the mDiscoveredCallbacks may get changed which invalidates the running iterator. We need to refer
     // to the callbacks by subscriberId to avoid invalid memory access.
+    otbrLogInfo("OnServiceResolved 2 ");
     subscriberIds.reserve(mDiscoveredCallbacks.size());
     for (const auto &subCallback : mDiscoveredCallbacks)
     {
@@ -210,10 +211,12 @@ void Publisher::OnServiceResolved(const std::string &aType, const DiscoveredInst
             const auto &subCallback = *it;
             if (subCallback.second.first != nullptr)
             {
+                otbrLogInfo("OnServiceResolved 2.5, subscriberId= %d, aType = %s ", subscriberId, aType.c_str());
                 subCallback.second.first(aType, aInstanceInfo);
             }
         }
     }
+    otbrLogInfo("OnServiceResolved 3 ");
 }
 
 void Publisher::OnServiceRemoved(uint32_t aNetifIndex, const std::string &aType, const std::string &aInstanceName)
