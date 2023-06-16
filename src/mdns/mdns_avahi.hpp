@@ -220,6 +220,7 @@ private:
             if (mRecordBrowser)
             {
                 avahi_record_browser_free(mRecordBrowser);
+                mRecordBrowser = nullptr;
             }
         }
 
