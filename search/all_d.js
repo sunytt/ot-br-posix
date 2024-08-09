@@ -15,10 +15,12 @@ var searchData=
   ['nd_5fproxy_2ehpp_587',['nd_proxy.hpp',['../d1/d28/nd__proxy_8hpp.html',1,'']]],
   ['needcallback_588',['NeedCallback',['../d2/db0/classotbr_1_1rest_1_1Response.html#a88b2796012b48ef0af14c614c235597a',1,'otbr::rest::Response']]],
   ['neighborinfo_589',['NeighborInfo',['../d2/d47/structotbr_1_1DBus_1_1NeighborInfo.html',1,'otbr::DBus']]],
-  ['networkproperties_590',['NetworkProperties',['../d6/d75/classotbr_1_1Ncp_1_1NetworkProperties.html',1,'otbr::Ncp']]],
-  ['newinstance_591',['newInstance',['../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html#ad9fda081680824f22fd689743c201010',1,'otbr::vendor::VendorServer']]],
-  ['node2jsonstring_592',['Node2JsonString',['../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#a6804dde5c7c67da91efeec9fba9c905f',1,'otbr::rest::Json']]],
-  ['nodeinfo_593',['NodeInfo',['../d6/dbf/structotbr_1_1rest_1_1NodeInfo.html',1,'otbr::rest']]],
-  ['noncopyable_594',['NonCopyable',['../dc/d3c/classNonCopyable.html',1,'']]],
-  ['number2jsonstring_595',['Number2JsonString',['../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#a8ca8f1684dd72a37a098f9ea2a2f662f',1,'otbr::rest::Json']]]
+  ['netif_590',['Netif',['../d3/d72/classotbr_1_1Netif.html',1,'otbr']]],
+  ['netif_2ehpp_591',['netif.hpp',['../d0/d86/netif_8hpp.html',1,'']]],
+  ['networkproperties_592',['NetworkProperties',['../d6/d75/classotbr_1_1Ncp_1_1NetworkProperties.html',1,'otbr::Ncp']]],
+  ['newinstance_593',['newInstance',['../d5/d8a/classotbr_1_1vendor_1_1VendorServer.html#ad9fda081680824f22fd689743c201010',1,'otbr::vendor::VendorServer']]],
+  ['node2jsonstring_594',['Node2JsonString',['../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#a6804dde5c7c67da91efeec9fba9c905f',1,'otbr::rest::Json']]],
+  ['nodeinfo_595',['NodeInfo',['../d6/dbf/structotbr_1_1rest_1_1NodeInfo.html',1,'otbr::rest']]],
+  ['noncopyable_596',['NonCopyable',['../dc/d3c/classNonCopyable.html',1,'']]],
+  ['number2jsonstring_597',['Number2JsonString',['../d0/d6c/namespaceotbr_1_1rest_1_1Json.html#a8ca8f1684dd72a37a098f9ea2a2f662f',1,'otbr::rest::Json']]]
 ];
